@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+:root {
+  --blue: #3b7c98;
+  --blue_hover: #2c5c70;
+  --red: #c33333;
+  --red_hover: #882323;
+  --yellow: #b39348;
+  --brown: #76523c;
+  --darker_brown: #4d3c32;
+  --font: "Orbitron", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--darker_brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+}
+
+h1,
+h2 {
+  color: var(--yellow);
+  font-family: var(--font);
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.start-button {
+  background-color: var(--blue);
+  color: var(--red);
+  border: none;
+  border-radius: 30px;
+  height: 60px;
+  width: 180px;
+  padding: 6px;
+  font-size: 30px;
+  font-family: var(--font);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: var(--blue_hover);
+  color: var(--red_hover);
+}
