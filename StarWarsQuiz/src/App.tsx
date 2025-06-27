@@ -1,11 +1,18 @@
-import "./App.css";
+import "./styles/App.css";
+import StartScreen from "./components/startScreen";
+import Quiz from "./components/Quiz";
+import { useState } from "react";
 
 function App() {
+  const [quizStarted, setQuizStarted] = useState(false);
+
   return (
     <>
-      <h1>Welcome to the Star Wars Quiz</h1>
-      <h2>Press the button to start!</h2>
-      <button className="start-button">CLICK ME</button>
+      {quizStarted ? (
+        <Quiz />
+      ) : (
+        <StartScreen onStart={() => setQuizStarted(true)} />
+      )}
     </>
   );
 }
