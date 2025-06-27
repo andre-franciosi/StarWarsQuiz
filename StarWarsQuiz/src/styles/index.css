@@ -13,6 +13,7 @@
 
 body {
   height: 100vh;
+  width: 100vw;
   background-color: var(--darker_brown);
   display: flex;
   align-items: center;
@@ -37,7 +38,7 @@ h2 {
   font-size: 30px;
 }
 
-.start-button {
+button {
   background-color: var(--blue);
   color: var(--red);
   border: none;
@@ -51,7 +52,7 @@ h2 {
   cursor: pointer;
 }
 
-.start-button:hover {
+button:hover {
   background-color: var(--blue_hover);
   color: var(--red_hover);
 }

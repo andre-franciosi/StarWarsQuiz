@@ -1,0 +1,16 @@
+.alternatives {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 150px;
+  grid-row-gap: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.alternative-button {
+  font-weight: 900;
+  width: 300px;
+}
