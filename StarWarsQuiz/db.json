@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "question": "What is the name of Luke Skywalker's home planet?",
+      "alternatives": ["Tatooine", "Naboo", "Alderaan", "Hoth"],
+      "answer": "Tatooine"
+    },
+    {
+      "question": "Who is Luke's father?",
+      "alternatives": ["Obi-Wan", "Yoda", "Anakin", "Han Solo"],
+      "answer": "Anakin"
+    },
+    {
+      "question": "What is the name of Han Solo's ship?",
+      "alternatives": [
+        "X-Wing",
+        "Millennium Falcon",
+        "TIE Fighter",
+        "Star Destroyer"
+      ],
+      "answer": "Millennium Falcon"
+    },
+    {
+      "question": "Who trained Anakin Skywalker?",
+      "alternatives": ["Yoda", "Mace Windu", "Obi-Wan Kenobi", "Qui-Gon Jinn"],
+      "answer": "Obi-Wan Kenobi"
+    },
+    {
+      "question": "What is the name of the main villain in the original trilogy?",
+      "alternatives": ["Darth Maul", "Darth Vader", "Kylo Ren", "Palpatine"],
+      "answer": "Darth Vader"
+    },
+    {
+      "question": "What is the name of Luke Skywalker's mentor?",
+      "alternatives": [
+        "Obi-Wan Kenobi",
+        "Leia Organa",
+        "Han Solo",
+        "Chewbacca"
+      ],
+      "answer": "Obi-Wan Kenobi"
+    },
+    {
+      "question": "What is the name of the planet where Yoda goes into exile?",
+      "alternatives": ["Dagobah", "Endor", "Mustafar", "Kamino"],
+      "answer": "Dagobah"
+    },
+    {
+      "question": "Who killed Emperor Palpatine?",
+      "alternatives": ["Luke Skywalker", "Darth Vader", "Rey", "Mace Windu"],
+      "answer": "Darth Vader"
+    },
+    {
+      "question": "What is the name of the Jedi order that protects the galaxy?",
+      "alternatives": [
+        "Sith Order",
+        "Jedi Order",
+        "Galactic Order",
+        "Order of the Force"
+      ],
+      "answer": "Jedi Order"
+    },
+    {
+      "question": "Who is the creator of Star Wars?",
+      "alternatives": [
+        "Steven Spielberg",
+        "George Lucas",
+        "J.J. Abrams",
+        "James Cameron"
+      ],
+      "answer": "George Lucas"
+    }
+  ]
+}
