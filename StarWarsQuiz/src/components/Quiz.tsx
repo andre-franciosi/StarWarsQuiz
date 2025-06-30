@@ -1,54 +1,78 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Question from "./Question";
+import axios from "axios";
 import "../styles/Quiz.css";
 
 type QuestionData = {
   question: string;
   alternatives: string[];
+  answer: string;
 };
 
-const questions: QuestionData[] = [
-  {
-    question: "Qual o nome do planeta natal do Luke Skywalker?",
-    alternatives: ["Tatooine", "Naboo", "Alderaan", "Hoth"],
-  },
-  {
-    question: "Quem é o pai de Luke?",
-    alternatives: ["Obi-Wan", "Yoda", "Anakin", "Han Solo"],
-  },
-  {
-    question: "Qual o nome da nave do Han Solo?",
-    alternatives: [
-      "X-Wing",
-      "Millennium Falcon",
-      "TIE Fighter",
-      "Star Destroyer",
-    ],
-  },
-];
+function shuffleArray<T>(array: T[]): T[] {
+  return [...array].sort(() => Math.random() - 0.5);
+}
 
 function Quiz() {
+  const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/questions")
+      .then((response) => {
+        const shuffled: QuestionData[] = shuffleArray(response.data);
+        setQuestions(shuffled);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const handleNext = () => {
     setCurrentQuestionIndex((prev) => prev + 1);
   };
 
+  const verifyAnswer = (selected: string) => {
+    const correct = questions[currentQuestionIndex].answer;
+    if (selected === correct) {
+      setScore((prev) => prev + 1);
+    }
+    handleNext();
+  };
+
+  const restartQuiz = () => {
+    const reshuffled = shuffleArray(questions);
+    setQuestions(reshuffled);
+    setCurrentQuestionIndex(0);
+    setScore(0);
+  };
+
   const isQuizFinished = currentQuestionIndex >= questions.length;
+
+  if (loading) {
+    return <h1>Loading questions...</h1>;
+  }
 
   return (
     <>
       <div className="question">
         {!isQuizFinished ? (
-          <>
-            <Question
-              question={questions[currentQuestionIndex].question}
-              alternative={questions[currentQuestionIndex].alternatives}
-            />
-            <button onClick={handleNext}>Next</button>
-          </>
+          <Question
+            question={questions[currentQuestionIndex].question}
+            alternative={questions[currentQuestionIndex].alternatives}
+            verifyAnswer={verifyAnswer}
+          />
         ) : (
-          <h1>Quiz finalizado!</h1>
+          <div>
+            <h1>Quiz Finished!</h1>
+            <h1>Correct Answers: {score}</h1>
+            <button onClick={restartQuiz}>Reiniciar</button>
+          </div>
         )}
       </div>
     </>
