@@ -1,4 +1,3 @@
-import "./styles/App.css";
 import StartScreen from "./components/startScreen";
 import Quiz from "./components/Quiz";
 import { useState } from "react";
