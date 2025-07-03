@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Question from "./Question";
 import axios from "axios";
-import "../styles/Quiz.css";
 
 type QuestionData = {
   question: string;
@@ -69,9 +68,18 @@ function Quiz() {
           />
         ) : (
           <div>
-            <h1>Quiz Finished!</h1>
-            <h1>Correct Answers: {score}</h1>
-            <button onClick={restartQuiz}>Reiniciar</button>
+            <h1 className="text-purple font-orbitron font-extrabold text-5xl">
+              Quiz Finished!
+            </h1>
+            <h1 className="text-purple font-orbitron font-extrabold text-5xl mt-4">
+              Correct Answers: {score}
+            </h1>
+            <button
+              className="bg-blue text-red border-0 rounded-4xl h-16 w-48 p-1.5 text-3xl font-orbitron font-bold cursor-pointer hover:bg-blue_hover hover:text-red_hover mt-4"
+              onClick={restartQuiz}
+            >
+              Reiniciar
+            </button>
           </div>
         )}
       </div>
